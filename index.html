@@ -8,8 +8,74 @@
 		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
+		<h1>Hello World</h1>
 		<!-- toggle button -->
-		<div class="btn" id="toggle__button"></div>
+		<div class="btn" id="toggle__button">
+			<div class="btn__outline btn__outline-1"></div>
+			<div class="btn__outline btn__outline-1"></div>
+			<div id="hamburger">
+				<span></span>
+			</div>
+		</div>
+
+		<!-- svg overlay -->
+		<div class="overlay">
+			<svg viewBob="0 0 1000 1000">
+				<path d="M0 2S175 1 500 1S500 1 500 1V0H0Z"></path>
+			</svg>
+		</div>
+
+		<!-- menu items-->
+		<div class="menu__items">
+			<div class="primary__menu">
+				<div class="menu__container">
+					<div class="wrapper">
+						<div class="menu__item">
+							<a href="#"><span>I</span>Index</a>
+							<div class="menu__item_revealer"></div>
+						</div>
+
+						<div class="menu__item">
+							<a href="#"><span>II</span>Work</a>
+							<div class="menu__item_revealer"></div>
+						</div>
+
+						<div class="menu__item">
+							<a href="#"><span>III</span>About</a>
+							<div class="menu__item_revealer"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="secondary__menu">
+				<div class="menu__container">
+					<div class="wrapper">
+						<div class="menu__item">
+							<a href="#">Speaker</a>
+							<div class="menu__item_revealer"></div>
+						</div>
+
+						<div class="menu__item">
+							<a href="#">Blog</a>
+							<div class="menu__item_revealer"></div>
+						</div>
+
+						<div class="menu__item">
+							<a href="#">Contact</a>
+							<div class="menu__item_revealer"></div>
+						</div>
+					</div>
+
+					<div class="wrapper">
+						<div class="menu__item">
+							<a href="#">Credits</a>
+							<div class="menu__item_revealer"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 		<script type="module" src="/main.js"></script>
 	</body>
 </html>
