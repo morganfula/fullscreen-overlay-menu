@@ -1,3 +1,8 @@
+@font-face {
+	font-family: 'Archia';
+	src: url('./public/archia-regular-webfont.ttf') format('truetype');
+}
+
 :root {
 	--bg: #e5e3dc;
 	--link-color: #e2e2dc;
@@ -15,4 +20,213 @@ body {
 	width: 100vw;
 	height: 100vh;
 	background: var(--bg);
+	font-family: 'Archia';
+	overflow: hidden;
+}
+
+h1.hero__title {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	line-height: 73%;
+	font-size: 10vw;
+	font-weight: 400;
+	z-index: 0;
+	white-space: nowrap;
+	text-transform: uppercase;
+	letter-spacing: -8px;
+}
+
+.overlay {
+	position: absolute;
+	height: 100vh;
+	width: 100vw;
+	top: 0;
+	left: 0;
+	z-index: 0;
+}
+
+svg path {
+	fill: var(--overlay-bg);
+}
+
+#toggle__button {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 100px;
+	height: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 2;
+	cursor: pointer;
+	margin: 2em;
+}
+
+.btn__outline {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	border: 1px solid var(--overlay-bg);
+}
+
+.btn__outline--1 {
+	border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+	animation: morph 4s linear infinite;
+}
+
+.btn__outline--2 {
+	border-radius: 53% 47% 43% 57% / 51% 39% 61% 49%;
+}
+
+@keyframes morph {
+	0% {
+		border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+	}
+	50% {
+		border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+	}
+	100% {
+		border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+	}
+}
+
+#hamburger {
+	position: relative;
+	width: 20px;
+	height: 20px;
+	z-index: 2;
+}
+
+#hamburger span {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	display: inline-block;
+	width: 24px;
+	height: 1.25px;
+	background: var(--overlay-bg);
+	transition: transform 0.25s;
+}
+
+#hamburger span::before {
+	content: '';
+	position: absolute;
+	right: 0;
+	transform: translateY(-4px);
+	display: inline-block;
+	width: 18px;
+	height: 1.25px;
+	background: var(--overlay-bg);
+	transition: transform 0.25s;
+}
+
+#hamburger .active span {
+	transform: rotate(45deg);
+}
+
+#hamburger .active span::before {
+	transform: rotate(-90deg);
+	top: unset;
+}
+
+.menu {
+	position: fixed;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+}
+
+.menu > div {
+	height: 100%;
+	display: flex;
+}
+
+.menu a {
+	position: relative;
+	top: 120px;
+	line-height: 70%;
+	text-decoration: none;
+	color: var(--link-color);
+	color: red;
+}
+
+.menu a span {
+	font-size: 20px;
+	margin-right: 2em;
+	font-family: 'Archia';
+}
+
+.menu__item {
+	position: relative;
+}
+
+.menu__item::after {
+	content: '';
+	position: absolute;
+	top: 100px;
+	left: -20px;
+	width: 120%;
+	height: 200%;
+	background: var(--overlay-bg);
+
+	margin: 0 auto;
+}
+
+.menu__container {
+	width: 70%;
+	height: 50%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.primary__menu {
+	flex: 3;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.primary__menu .menu__container .wrapper {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.primary__menu a {
+	font-size: 125px;
+	text-transform: uppercase;
+	font-weight: 500;
+}
+
+.secondary__menu {
+	flex: 2;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 8em;
+}
+
+.secondary__menu .menu__item a {
+	font-family: 'Archia';
+	font-size: 36px;
+}
+
+.secondary__menu .menu__container .wrapper:nth-child(1) {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
+
+.primary__menu .menu__container .wrapper .menu__item:nth-child(1) a,
+.primary__menu .menu__container .wrapper .menu__item:nth-child(3) a {
+	margin-left: 1em;
 }
